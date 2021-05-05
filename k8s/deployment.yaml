@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "hotserver"
+  labels:
+    app: "hotserver"
+spec:
+  selector:
+    matchLabels:
+      app: "hotserver"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: "hotserver"
+    spec:
+      containers:
+        - name: "hotserver"
+          image: rodrigorael/start-k8s:latest
